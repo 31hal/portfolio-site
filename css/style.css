@@ -20,19 +20,37 @@ nav {
   gap: 2rem;
   padding: 1.5rem 0;
   background-color: #fff;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #ddd; /* nav 全体の下線は固定 */
 }
 
 nav a {
+  position: relative; /* 擬似要素用に relative に設定 */
   font-weight: 300;
   font-size: 1.15rem;
-  transition: color 0.3s, border-bottom 0.3s, transform 0.3s;
+  text-decoration: none;
+  color: #111;
+  transition: color 0.3s;
+}
+
+/* 擬似要素で下線を作る */
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #111;
+  transition: width 0.3s ease;
+}
+
+/* hover で下線を伸ばす */
+nav a:hover::after {
+  width: 100%;
 }
 
 nav a:hover {
-  color: #555;
-  border-bottom: 2px solid #111;
-  transform: scale(1.05);
+  color: #555; /* 文字色も変える */
 }
 
 /* メインコンテンツ */
