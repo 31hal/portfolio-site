@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const nav = document.createElement('nav');
       navItems.forEach(item => {
         const link = document.createElement('a');
-        link.href = item.href;
+        link.href = item.url;
         link.textContent = item.name;
         nav.appendChild(link);
       });
