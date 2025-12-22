@@ -1,23 +1,30 @@
+// 1. ナビゲーション生成
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. ナビゲーション生成
   fetch('data/nav.json')
     .then(res => res.json())
     .then(navItems => {
       const nav = document.createElement('nav');
       navItems.forEach(item => {
         const link = document.createElement('a');
-        link.href = item.url;
+        link.href = item.url; // nav.json の url キーと一致させる
         link.textContent = item.name;
         nav.appendChild(link);
       });
       document.body.insertBefore(nav, document.body.firstChild);
-    });
+    }).catch(err => console.error('nav.json 読み込みエラー', err));
+});
 
-  // ギャラリーのモーダル表示
+// 2. ギャラリーのモーダル表示
+document.addEventListener('DOMContentLoaded', () => {
   const galleryImages = document.querySelectorAll('.gallery img');
-  const modal = document.querySelector('.modal');
-  const modalImg = modal.querySelector('img');
-  
+  if (!galleryImages.length) return;
+
+  const modal = document.createElement('div');
+  modal.classList.add('modal');
+  const modalImg = document.createElement('img');
+  modal.appendChild(modalImg);
+  document.body.appendChild(modal);
+
   galleryImages.forEach(img => {
     img.addEventListener('click', () => {
       const hiResSrc = img.src.replace('-thumb.jpg', '.JPG');
@@ -25,12 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
       modal.classList.add('show');
     });
   });
-  
+
   modal.addEventListener('click', () => {
     modal.classList.remove('show');
-    setTimeout(() => { modalImg.src = ''; }, 300); // フェードアウト後に src をクリア
+    setTimeout(() => { modalImg.src = ''; }, 300);
   });
-
+});
 
 
   // 3. Markdownレンダリング関数（必要に応じて使用）
