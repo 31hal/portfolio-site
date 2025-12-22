@@ -7,24 +7,40 @@
 
 body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
-  background-color: #fff;
   color: #111;
-  line-height: 1.6;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
 }
 
 /* ナビゲーション */
 nav {
   display: flex;
+  justify-content: center;
   gap: 2rem;
-  padding: 1rem 2rem;
-  border-bottom: 1px solid #ccc;
+  padding: 1.5rem 0;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: #111;
+  transition: color 0.3s, border-bottom 0.3s;
+}
+
+nav a:hover {
+  color: #555;
+  border-bottom: 2px solid #111;
 }
 
 /* メインコンテンツ */
 main {
+  padding: 0 1.5rem;
   max-width: 1200px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+  margin: 0 auto;
 }
 
 /* 見出し */
@@ -63,6 +79,48 @@ h1 {
   gap: 1.5rem;
 }
 
+#thoughts-content, #terms-content {
+  max-width: 850px;
+  margin: 2rem auto;
+  line-height: 1.8;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #222;
+}
+
+#thoughts-content h1,
+#terms-content h1 {
+  font-weight: 300;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+#thoughts-content h2,
+#terms-content h2 {
+  font-weight: 400;
+  font-size: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+#thoughts-content h3,
+#terms-content h3 {
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#thoughts-content ul,
+#terms-content ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+#thoughts-content li,
+#terms-content li {
+  margin-bottom: 0.5rem;
+}
+
 /* Profile Image */
 .profile-image img {
   width: 300px;
@@ -79,4 +137,25 @@ a {
 a:hover {
   color: #555;
   border-bottom: 1px solid #111;
+}
+
+/* モーダル用 */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
