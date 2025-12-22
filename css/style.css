@@ -157,21 +157,22 @@ a:hover {
 
 /* モーダル用 */
 .modal {
-  display: none;
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
   background-color: rgba(0,0,0,0.8);
+  display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
   opacity: 0;
+  pointer-events: none; /* 非表示時はクリック不可 */
   transition: opacity 0.3s ease;
 }
 
 .modal.show {
-  display: flex;
   opacity: 1;
+  pointer-events: auto; /* 表示時にクリック可能に */
 }
 
 .modal img {
@@ -181,4 +182,5 @@ a:hover {
   box-shadow: 0 10px 30px rgba(0,0,0,0.4);
   transition: transform 0.3s ease;
 }
+
 
