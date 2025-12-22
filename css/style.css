@@ -179,3 +179,67 @@ section.photoreq_terms article {
   color: white;
   cursor: pointer;
 }
+
+.profile-page {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #111;
+  background-color: #fff;
+  padding: 2rem;
+}
+
+.profile-intro {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.profile-photo img {
+  width: 250px;
+  object-fit: cover;
+  border: 2px solid #111;
+}
+
+.profile-text h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.profile-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.profile-works h2,
+.profile-contact h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #111;
+  padding-bottom: 0.5rem;
+}
+
+.works-grid {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.work {
+  width: 200px;
+  text-align: center;
+}
+
+.work img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #111;
+}
+
+.profile-contact p a {
+  color: #111;
+  text-decoration: none;
+  border-bottom: 1px solid #111;
+}
