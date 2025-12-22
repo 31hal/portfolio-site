@@ -20,7 +20,7 @@
       .then(res => res.text())
       .then(text => {
         const container = document.getElementById('thoughts-content');
-        container.innerHTML = text.replace(/\n/g, '<br>'); // 簡易Markdown変換
+        container.innerHTML = renderMarkdown(text);
       });
   </script>
 </body>
