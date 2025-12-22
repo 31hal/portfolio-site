@@ -10,10 +10,18 @@
 
   <main>
     <section class="thoughts">
-      <article style="--i:0.4;">今日の撮影で感じたこと</article>
-      <article style="--i:0.6;">内省的な短文</article>
-      <article style="--i:0.2;">ふわっとした気持ちの文章</article>
+      <h1>Thoughts</h1>
+      <div id="thoughts-content"></div>
     </section>
   </main>
+
+  <script>
+    fetch('data/thoughts.md')
+      .then(res => res.text())
+      .then(text => {
+        const container = document.getElementById('thoughts-content');
+        container.innerHTML = text.replace(/\n/g, '<br>'); // 簡易Markdown変換
+      });
+  </script>
 </body>
 </html>
