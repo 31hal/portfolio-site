@@ -5,20 +5,20 @@ ChatGPTをフル活用して書いたページ
 ```
 
 portfolio-site/
-│
-├─ index.html
-├─ gallery.html
-├─ news.html
-├─ music.html
-├─ photoreq_terms.html
-├─ thoughts.html
-│
-├─ css/
+│ index.html
+│ gallery.html
+│ news.html
+│ thoughts.html
+│ music.html
+│ photoreq_terms.html
+│ css/
 │   └─ style.css
-│
-├─ data/
-│   ├─ music.json
+│ js/
+│   └─ nav.js
+│ data/
+│   ├─ nav.json
 │   ├─ photoreq_terms.md
+│   ├─ music.json
 │   └─ thoughts.md
 │
 └─ assets/
