@@ -2,42 +2,28 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>Photoreq Terms - Haruh</title>
+  <title>依頼について</title>
   <link rel="stylesheet" href="css/style.css">
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <style>
-    main { padding:2rem; max-width:800px; margin:auto; }
-    h1,h2,h3 { margin-top:1.5rem; }
-    p, li { line-height:1.6; color:#333; }
-  </style>
 </head>
 <body>
-<header>
-  <nav>
-    <a href="index.html">Home</a> |
-    <a href="gallery.html">Gallery</a> |
-    <a href="news.html">News</a> |
-    <a href="thoughts.html">Thoughts</a> |
-    <a href="music.html">Music</a> |
-    <a href="photoreq_terms.html">依頼について</a>
-  </nav>
-</header>
+  <script src="js/nav.js"></script>
 
-<main id="content">
-  <p>読み込み中…</p>
-</main>
+  <main>
+    <section class="photoreq_terms">
+      <h2>依頼について</h2>
+      <div id="terms-container">
+        <!-- MarkdownをHTMLに変換して表示する想定 -->
+      </div>
+    </section>
+  </main>
 
-<script>
-fetch('data/photoreq_terms.md')
-  .then(response => response.text())
-  .then(md => {
-    const html = marked.parse(md);
-    document.getElementById('content').innerHTML = html;
-  })
-  .catch(err => {
-    document.getElementById('content').innerHTML = '<p>読み込みに失敗しました。</p>';
-    console.error(err);
-  });
-</script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    fetch('data/photoreq_terms.md')
+      .then(res => res.text())
+      .then(md => {
+        document.getElementById('terms-container').innerHTML = marked(md);
+      });
+  </script>
 </body>
 </html>
