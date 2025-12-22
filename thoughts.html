@@ -4,6 +4,12 @@
   <meta charset="UTF-8">
   <title>Thoughts - Haruh</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    main { padding:2rem; max-width:800px; margin:auto; }
+    h1,h2,h3 { margin-top:1.5rem; }
+    p, li { line-height:1.6; color:#333; }
+  </style>
 </head>
 <body>
 <header>
@@ -13,16 +19,25 @@
     <a href="news.html">News</a> |
     <a href="thoughts.html">Thoughts</a> |
     <a href="music.html">Music</a> |
-    <a href="terms.html">依頼について</a>
+    <a href="photoreq_terms.html">依頼について</a>
   </nav>
 </header>
 
-<main>
-  <h1>Thoughts</h1>
-  <article>
-    <p>日々の内省や気づき、感情を綴ります。</p>
-    <p>例: 今日は電車で素敵な風景を見た。光と影のバランスが心に残った。</p>
-  </article>
+<main id="content">
+  <p>読み込み中…</p>
 </main>
+
+<script>
+fetch('data/thoughts.md')
+  .then(response => response.text())
+  .then(md => {
+    const html = marked.parse(md);
+    document.getElementById('content').innerHTML = html;
+  })
+  .catch(err => {
+    document.getElementById('content').innerHTML = '<p>読み込みに失敗しました。</p>';
+    console.error(err);
+  });
+</script>
 </body>
 </html>
