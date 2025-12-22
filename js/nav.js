@@ -63,3 +63,18 @@ function renderMarkdown(mdText) {
   return html;
 }
 
+document.querySelectorAll('.gallery img').forEach(img => {
+  img.addEventListener('click', () => {
+    const modal = document.createElement('div');
+    modal.classList.add('modal');
+    const modalImg = document.createElement('img');
+    modalImg.src = img.src.replace('.JPG', '_highres.JPG'); // 高解像度版
+    modal.appendChild(modalImg);
+    document.body.appendChild(modal);
+    modal.style.display = 'flex';
+
+    modal.addEventListener('click', () => {
+      modal.remove();
+    });
+  });
+});
