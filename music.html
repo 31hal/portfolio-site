@@ -2,71 +2,21 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>Music - Haruh</title>
+  <title>Music</title>
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    .track-card { border:1px solid #ddd; border-radius:12px; padding:1rem; margin-bottom:2rem; max-width:500px; background:#fafafa; }
-    .track-card h2 { margin:0 0 0.5rem 0; font-size:1.1rem; }
-    .track-card p { margin:0.3rem 0 0.8rem 0; font-size:0.95rem; color:#555; }
-    iframe { border-radius:8px; width:100%; }
-  </style>
 </head>
 <body>
-<header>
-  <nav>
-    <a href="index.html">Home</a> |
-    <a href="gallery.html">Gallery</a> |
-    <a href="news.html">News</a> |
-    <a href="thoughts.html">Thoughts</a> |
-    <a href="music.html">Music</a> |
-    <a href="terms.html">依頼について</a>
-  </nav>
-</header>
+  <script src="js/nav.js"></script>
 
-<main>
-  <h1>私の好きな音楽</h1>
-  <div id="music-container"></div>
-</main>
-
-<script>
-fetch('data/music.json')
-  .then(response => response.json())
-  .then(data => {
-    const container = document.getElementById('music-container');
-    data.forEach(track => {
-      const card = document.createElement('div');
-      card.className = 'track-card';
-
-      const title = document.createElement('h2');
-      title.textContent = track.title;
-      card.appendChild(title);
-
-      const comment = document.createElement('p');
-      comment.textContent = track.comment;
-      card.appendChild(comment);
-
-      if(track.spotify) {
-        const iframe = document.createElement('iframe');
-        iframe.src = track.spotify;
-        iframe.height = 80;
-        iframe.frameBorder = 0;
-        iframe.allow = "encrypted-media";
-        card.appendChild(iframe);
-      }
-
-      if(track.soundcloud) {
-        const iframe = document.createElement('iframe');
-        iframe.src = track.soundcloud;
-        iframe.height = 166;
-        iframe.scrolling = "no";
-        iframe.frameBorder = 0;
-        iframe.allow = "autoplay";
-        card.appendChild(iframe);
-      }
-
-      container.appendChild(card);
-    });
-  });
-</script>
+  <main>
+    <section class="music">
+      <h2>好きな音楽</h2>
+      <ul>
+        <li><a href="https://open.spotify.com/artist/xxxx" target="_blank">Spotifyリンク</a></li>
+        <li><a href="https://soundcloud.com/xxxx" target="_blank">SoundCloudリンク</a></li>
+      </ul>
+      <p>各曲やアーティストへの感想やコメントもここに書けます。</p>
+    </section>
+  </main>
 </body>
 </html>
