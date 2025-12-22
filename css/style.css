@@ -1,80 +1,79 @@
-/* 共通 */
-body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #111;
-  background: #fff;
+/* 基本リセット */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-/* ヘッダー／ナビゲーションはnav.jsで管理 */
-
-/* ページ共通セクション */
-main section {
-  padding: 3rem 2rem;
-  margin-bottom: 3rem;
-}
-
-/* Works / Gallery */
-.works-grid, .gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.works-grid img, .gallery img {
-  width: 200px;
-  cursor: pointer;
-  border: 1px solid #111;
-  transition: transform 0.2s;
-}
-
-.works-grid img:hover, .gallery img:hover {
-  transform: scale(1.05);
-}
-
-/* Profile page */
-.profile-intro {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-  margin-bottom: 4rem;
-}
-.profile-photo img {
-  width: 250px;
-  object-fit: cover;
-  border: 2px solid #111;
-}
-.profile-text h1 {
-  font-size: 2rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-.profile-text p {
-  font-size: 1rem;
+/* フォント・色・背景 */
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #222;
+  background: #fff;
   line-height: 1.6;
 }
 
-/* Modal */
+/* ナビゲーション */
+nav.main-nav {
+  width: 100%;
+  background: #f7f7f7;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+nav.main-nav ul {
+  display: flex;
+  gap: 1.5rem;
+}
+nav.main-nav a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+nav.main-nav a:hover {
+  color: #555;
+}
+
+/* 共通セクション */
+main {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ギャラリー */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+.gallery img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: transform 0.3s;
+}
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* モーダル */
 .modal {
   display: none;
   position: fixed;
-  z-index: 1000;
-  left: 0; top: 0;
+  top: 0; left: 0;
   width: 100%; height: 100%;
-  background-color: rgba(0,0,0,0.85);
+  background: rgba(0,0,0,0.8);
   justify-content: center;
   align-items: center;
+  z-index: 1000;
 }
-.modal-content {
+.modal img {
   max-width: 90%;
   max-height: 90%;
+  border-radius: 4px;
 }
-#modal-close {
-  position: absolute;
-  top: 20px; right: 40px;
-  font-size: 3rem;
-  color: white;
-  cursor: pointer;
+.modal.show {
+  display: flex;
 }
