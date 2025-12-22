@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Banvox - Ambassador",
+    "comment": "ライブで聴きたい、ビート感のあるエレクトロ。",
+    "spotify": "https://open.spotify.com/embed/track/XXXXXXXXXX",
+    "soundcloud": ""
+  },
+  {
+    "title": "SoundCloud Example Track",
+    "comment": "深夜の部屋で聴くと心に沁みるアンビエント。",
+    "spotify": "",
+    "soundcloud": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/XXXXXXXXX&color=%23ff5500"
+  }
+]
