@@ -8,20 +8,33 @@
 <body>
   <script src="js/nav.js"></script>
 
-  <main class="gallery-page">
+  <main>
     <section class="gallery">
-      <img src="assets/images/photo1-thumb.jpg" data-full="assets/images/photo1.JPG" alt="Photo 1">
-      <img src="assets/images/photo2-thumb.jpg" data-full="assets/images/photo2.JPG" alt="Photo 2">
-      <img src="assets/images/photo3-thumb.jpg" data-full="assets/images/photo3.JPG" alt="Photo 3">
-      <img src="assets/images/photo4-thumb.jpg" data-full="assets/images/photo4.JPG" alt="Photo 4">
+      <img src="assets/images/photo1-thumb.jpg" data-highres="assets/images/photo1.JPG">
+      <img src="assets/images/photo2-thumb.jpg" data-highres="assets/images/photo2.JPG">
+      <img src="assets/images/photo3-thumb.jpg" data-highres="assets/images/photo3.JPG">
+      <img src="assets/images/photo4-thumb.jpg" data-highres="assets/images/photo4.JPG">
     </section>
   </main>
 
-  <div id="modal" class="modal">
-    <span id="modal-close">&times;</span>
-    <img class="modal-content" id="modal-img">
+  <!-- モーダル -->
+  <div class="modal" id="modal">
+    <img src="" alt="High resolution">
   </div>
 
-  <script src="js/gallery.js"></script>
+  <script>
+    const modal = document.getElementById("modal");
+    const modalImg = modal.querySelector("img");
+    document.querySelectorAll(".gallery img").forEach(img => {
+      img.addEventListener("click", () => {
+        modalImg.src = img.dataset.highres;
+        modal.classList.add("show");
+      });
+    });
+    modal.addEventListener("click", () => {
+      modal.classList.remove("show");
+      modalImg.src = "";
+    });
+  </script>
 </body>
 </html>
