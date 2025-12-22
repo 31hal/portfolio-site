@@ -24,18 +24,22 @@ document.addEventListener('DOMContentLoaded', () => {
   
     galleryImages.forEach(img => {
       img.addEventListener('click', () => {
-        // サムネから高解像度版に変換
         const hiResSrc = img.src.replace('-thumb.jpg', '.JPG');
         modalImg.src = hiResSrc;
-        modal.style.display = 'flex';
+        modal.classList.add('show');
       });
     });
   
     modal.addEventListener('click', () => {
-      modal.style.display = 'none';
-      modalImg.src = '';
+      modal.classList.remove('show');
+      // opacity が 0 になってから display:none にする
+      setTimeout(() => {
+        modalImg.src = '';
+        modal.style.display = 'none';
+      }, 300); // CSS transition と同じ時間
     });
-  }
+  });
+
 
   // 3. Markdownレンダリング関数（必要に応じて使用）
   window.renderMarkdown = function(mdText) {
