@@ -1,3 +1,4 @@
+/* 基本設定 */
 body {
   font-family: 'Helvetica Neue', sans-serif;
   line-height: 1.6;
@@ -7,28 +8,39 @@ body {
   padding: 0;
 }
 
-.main-nav a {
+a {
   text-decoration: none;
   color: #333;
   transition: color 0.3s;
 }
 
-.main-nav a:hover {
+a:hover {
   color: #a00; /* 野生のアクセントカラー */
 }
 
+/* ナビゲーション */
+.main-nav {
+  padding: 15px 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+/* 共通 hero セクション */
 .hero {
   text-align: center;
   padding: 80px 20px;
   background: linear-gradient(160deg, #fff, #eee);
 }
 
+/* 共通 intro */
 .intro {
   max-width: 700px;
   margin: 40px auto;
   padding: 0 20px;
 }
 
+/* Gallery: グリッド＋野生的アクセント */
 section.gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -36,25 +48,87 @@ section.gallery {
   margin: 40px 20px;
 }
 
-section.news, section.thoughts {
+section.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+section.gallery img:hover {
+  transform: scale(1.05) rotate(1deg);
+}
+
+/* News: 洗練＋整列 */
+section.news {
   max-width: 700px;
   margin: 40px auto;
   padding: 0 20px;
 }
 
+section.news article {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Thoughts: 文学性・内省的 */
+section.thoughts {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-style: italic;
+  color: #444;
+}
+
+/* Music: リンク集＋音楽的リズム */
 section.music {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
   max-width: 600px;
   margin: 40px auto;
   padding: 0 20px;
 }
 
+section.music a {
+  padding: 8px 12px;
+  border: 1px solid #a00;
+  border-radius: 4px;
+  display: inline-block;
+  background-color: #fff;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+section.music a:hover {
+  background-color: #a00;
+  color: #fff;
+}
+
+/* Photoreq Terms: 規約風・責任感ある見た目 */
 section.photoreq_terms {
   max-width: 800px;
   margin: 40px auto;
-  padding: 0 20px;
+  padding: 20px;
   background-color: #fafafa;
   border-left: 4px solid #a00;
+}
+
+section.photoreq_terms h2 {
+  margin-top: 0;
+  font-weight: bold;
+  color: #a00;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  section.gallery {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+  .hero {
+    padding: 60px 15px;
+  }
+  .intro, section.news, section.thoughts, section.music, section.photoreq_terms {
+    padding: 0 15px;
+  }
 }
