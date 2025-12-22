@@ -20,7 +20,7 @@
       .then(res => res.text())
       .then(text => {
         const container = document.getElementById('terms-content');
-        container.innerHTML = text.replace(/\n/g, '<br>');
+        container.innerHTML = renderMarkdown(text);
       });
   </script>
 </body>
