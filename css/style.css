@@ -1,4 +1,4 @@
-/* 基本設定 */
+/* 共通設定 */
 body {
   font-family: 'Helvetica Neue', sans-serif;
   line-height: 1.6;
@@ -11,11 +11,10 @@ body {
 a {
   text-decoration: none;
   color: #333;
-  transition: color 0.3s;
 }
 
 a:hover {
-  color: #a00; /* 野生のアクセントカラー */
+  color: #a00;
 }
 
 /* ナビゲーション */
@@ -26,21 +25,22 @@ a:hover {
   text-align: center;
 }
 
-/* 共通 hero セクション */
+/* hero */
 .hero {
   text-align: center;
   padding: 80px 20px;
   background: linear-gradient(160deg, #fff, #eee);
+  transform: rotate(-1deg); /* 微妙な解体感 */
 }
 
-/* 共通 intro */
+/* intro */
 .intro {
   max-width: 700px;
   margin: 40px auto;
   padding: 0 20px;
 }
 
-/* Gallery: グリッド＋野生的アクセント */
+/* gallery: 画像ブロック */
 section.gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -53,13 +53,14 @@ section.gallery img {
   height: auto;
   border-radius: 8px;
   transition: transform 0.3s;
+  transform: rotate(calc(-2deg + 4deg * var(--i)));
 }
 
 section.gallery img:hover {
-  transform: scale(1.05) rotate(1deg);
+  transform: scale(1.05) rotate(calc(-1deg + 2deg * var(--i)));
 }
 
-/* News: 洗練＋整列 */
+/* news: 洗練＋少し非対称 */
 section.news {
   max-width: 700px;
   margin: 40px auto;
@@ -70,9 +71,10 @@ section.news article {
   margin-bottom: 30px;
   padding-bottom: 20px;
   border-bottom: 1px solid #eee;
+  transform: rotate(calc(-0.5deg + 1deg * var(--i)));
 }
 
-/* Thoughts: 文学性・内省的 */
+/* thoughts: 内省＋ブロック崩し */
 section.thoughts {
   max-width: 700px;
   margin: 40px auto;
@@ -81,7 +83,12 @@ section.thoughts {
   color: #444;
 }
 
-/* Music: リンク集＋音楽的リズム */
+section.thoughts article {
+  margin: 20px 0;
+  transform: rotate(calc(-1deg + 2deg * var(--i)));
+}
+
+/* music: 流れる非対称ボタン */
 section.music {
   display: flex;
   flex-direction: column;
@@ -97,15 +104,17 @@ section.music a {
   border-radius: 4px;
   display: inline-block;
   background-color: #fff;
-  transition: background-color 0.3s, color 0.3s;
+  transform: translateX(calc(-5px + 10px * var(--i)));
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
 }
 
 section.music a:hover {
   background-color: #a00;
   color: #fff;
+  transform: translateX(0);
 }
 
-/* Photoreq Terms: 規約風・責任感ある見た目 */
+/* photoreq_terms: 規約ページも崩しを加える */
 section.photoreq_terms {
   max-width: 800px;
   margin: 40px auto;
@@ -120,7 +129,11 @@ section.photoreq_terms h2 {
   color: #a00;
 }
 
-/* レスポンシブ対応 */
+section.photoreq_terms article {
+  transform: rotate(calc(-0.5deg + 1deg * var(--i)));
+}
+
+/* レスポンシブ */
 @media (max-width: 768px) {
   section.gallery {
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
