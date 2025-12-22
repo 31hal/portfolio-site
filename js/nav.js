@@ -26,7 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
     galleryImages.forEach(img => {
       img.addEventListener('click', () => {
         // 高解像度版のパスを img.src から生成
-        const hiResSrc = img.src.replace(/(\.[a-z]+)$/i, '_highres$1');
+        // サムネから元の高解像度画像に変換
+        const hiResSrc = img.src.replace('-thumb.jpg', '.JPG');
         modalImg.src = hiResSrc;
         modal.style.display = 'flex';
       });
