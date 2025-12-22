@@ -2,6 +2,7 @@ ChatGPTをフル活用して書いたページ
 
 ## ディレクトリツリー構造構想
 
+```
 portfolio-site/
 │
 ├─ index.html
@@ -21,3 +22,4 @@ portfolio-site/
 └─ assets/
     ├─ images/
     └─ other/
+```
