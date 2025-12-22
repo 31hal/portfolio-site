@@ -10,10 +10,25 @@
 
   <main>
     <section class="news">
-      <article style="--i:0.1;">新作写真集リリース告知</article>
-      <article style="--i:0.3;">次回展示会の日時決定</article>
-      <article style="--i:0.5;">ワークショップ開催情報</article>
+      <h1>News</h1>
+      <div id="news-list">
+        <!-- JavaScriptでJSONから動的読み込み可能 -->
+      </div>
     </section>
   </main>
+
+  <script>
+    // ここでJSON等からニュースを読み込む想定
+    const newsData = [
+      { "title": "Exhibition 2026", "date": "2025-12-23", "link": "#" },
+      { "title": "New Photo Collection", "date": "2025-11-10", "link": "#" }
+    ];
+    const newsList = document.getElementById("news-list");
+    newsData.forEach(item => {
+      const article = document.createElement("article");
+      article.innerHTML = `<h2>${item.title}</h2><time>${item.date}</time><p><a href="${item.link}">Read more</a></p>`;
+      newsList.appendChild(article);
+    });
+  </script>
 </body>
 </html>
