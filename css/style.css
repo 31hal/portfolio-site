@@ -144,6 +144,13 @@ a:hover {
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal.show {
+  display: flex;
+  opacity: 1;
 }
 
 .modal img {
@@ -151,4 +158,6 @@ a:hover {
   max-height: 90%;
   border-radius: 4px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
 }
+
