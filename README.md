@@ -5,6 +5,7 @@ ChatGPTをフル活用して書いたページ
 ```
 
 portfolio-site/
+| README.md
 │ index.html
 │ gallery.html
 │ news.html
