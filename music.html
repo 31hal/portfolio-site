@@ -10,10 +10,22 @@
 
   <main>
     <section class="music">
-      <a href="https://open.spotify.com/..." style="--i:0.1;">Spotify: 曲A</a>
-      <a href="https://soundcloud.com/..." style="--i:0.3;">Soundcloud: 曲B</a>
-      <a href="https://open.spotify.com/..." style="--i:0.5;">Spotify: 曲C</a>
+      <h1>Music</h1>
+      <div id="music-list"></div>
     </section>
   </main>
+
+  <script>
+    fetch('data/music.json')
+      .then(res => res.json())
+      .then(data => {
+        const list = document.getElementById('music-list');
+        data.forEach(item => {
+          const div = document.createElement('div');
+          div.innerHTML = `<p>${item.title}</p><a href="${item.spotify}" target="_blank">Spotify</a> | <a href="${item.soundcloud}" target="_blank">SoundCloud</a>`;
+          list.appendChild(div);
+        });
+      });
+  </script>
 </body>
 </html>
