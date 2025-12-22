@@ -1,170 +1,69 @@
-/* 共通設定 */
+/* 共通 */
 body {
-  font-family: 'Helvetica Neue', sans-serif;
-  line-height: 1.6;
-  background-color: #f5f5f5;
-  color: #222;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #111;
+  background: #fff;
   margin: 0;
   padding: 0;
 }
 
-a {
-  text-decoration: none;
-  color: #333;
+/* ヘッダー／ナビゲーションはnav.jsで管理 */
+
+/* ページ共通セクション */
+main section {
+  padding: 3rem 2rem;
+  margin-bottom: 3rem;
 }
 
-a:hover {
-  color: #a00;
-}
-
-/* ナビゲーション */
-.main-nav {
-  padding: 15px 20px;
-  background-color: #fff;
-  border-bottom: 1px solid #ddd;
-  text-align: center;
-}
-
-/* hero */
-.hero {
-  text-align: center;
-  padding: 80px 20px;
-  background: linear-gradient(160deg, #fff, #eee);
-  transform: rotate(-1deg); /* 微妙な解体感 */
-}
-
-/* intro */
-.intro {
-  max-width: 700px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
-
-/* gallery: 画像ブロック */
-section.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  margin: 40px 20px;
-}
-
-section.gallery img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  transition: transform 0.3s;
-  transform: rotate(calc(-2deg + 4deg * var(--i)));
-}
-
-section.gallery img:hover {
-  transform: scale(1.05) rotate(calc(-1deg + 2deg * var(--i)));
-}
-
-/* news: 洗練＋少し非対称 */
-section.news {
-  max-width: 700px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
-
-section.news article {
-  margin-bottom: 30px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #eee;
-  transform: rotate(calc(-0.5deg + 1deg * var(--i)));
-}
-
-/* thoughts: 内省＋ブロック崩し */
-section.thoughts {
-  max-width: 700px;
-  margin: 40px auto;
-  padding: 0 20px;
-  font-style: italic;
-  color: #444;
-}
-
-section.thoughts article {
-  margin: 20px 0;
-  transform: rotate(calc(-1deg + 2deg * var(--i)));
-}
-
-/* music: 流れる非対称ボタン */
-section.music {
+/* Works / Gallery */
+.works-grid, .gallery {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 0 20px;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
 }
 
-section.music a {
-  padding: 8px 12px;
-  border: 1px solid #a00;
-  border-radius: 4px;
-  display: inline-block;
-  background-color: #fff;
-  transform: translateX(calc(-5px + 10px * var(--i)));
-  transition: background-color 0.3s, color 0.3s, transform 0.3s;
-}
-
-section.music a:hover {
-  background-color: #a00;
-  color: #fff;
-  transform: translateX(0);
-}
-
-/* photoreq_terms: 規約ページも崩しを加える */
-section.photoreq_terms {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 20px;
-  background-color: #fafafa;
-  border-left: 4px solid #a00;
-}
-
-section.photoreq_terms h2 {
-  margin-top: 0;
-  font-weight: bold;
-  color: #a00;
-}
-
-section.photoreq_terms article {
-  transform: rotate(calc(-0.5deg + 1deg * var(--i)));
-}
-
-/* レスポンシブ */
-@media (max-width: 768px) {
-  section.gallery {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  }
-  .hero {
-    padding: 60px 15px;
-  }
-  .intro, section.news, section.thoughts, section.music, section.photoreq_terms {
-    padding: 0 15px;
-  }
-}
-
-/* ギャラリー画像 */
-.gallery img {
+.works-grid img, .gallery img {
+  width: 200px;
   cursor: pointer;
-  width: 200px;  /* サムネイルサイズ */
-  margin: 5px;
+  border: 1px solid #111;
   transition: transform 0.2s;
 }
-.gallery img:hover {
+
+.works-grid img:hover, .gallery img:hover {
   transform: scale(1.05);
 }
 
-/* モーダル */
+/* Profile page */
+.profile-intro {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+.profile-photo img {
+  width: 250px;
+  object-fit: cover;
+  border: 2px solid #111;
+}
+.profile-text h1 {
+  font-size: 2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.profile-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Modal */
 .modal {
   display: none;
   position: fixed;
   z-index: 1000;
   left: 0; top: 0;
   width: 100%; height: 100%;
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0,0,0,0.85);
   justify-content: center;
   align-items: center;
 }
@@ -178,68 +77,4 @@ section.photoreq_terms article {
   font-size: 3rem;
   color: white;
   cursor: pointer;
-}
-
-.profile-page {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #111;
-  background-color: #fff;
-  padding: 2rem;
-}
-
-.profile-intro {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-  margin-bottom: 4rem;
-}
-
-.profile-photo img {
-  width: 250px;
-  object-fit: cover;
-  border: 2px solid #111;
-}
-
-.profile-text h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.profile-text p {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 0.5rem;
-}
-
-.profile-works h2,
-.profile-contact h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid #111;
-  padding-bottom: 0.5rem;
-}
-
-.works-grid {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.work {
-  width: 200px;
-  text-align: center;
-}
-
-.work img {
-  width: 100%;
-  height: auto;
-  border: 1px solid #111;
-}
-
-.profile-contact p a {
-  color: #111;
-  text-decoration: none;
-  border-bottom: 1px solid #111;
 }
