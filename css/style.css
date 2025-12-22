@@ -24,23 +24,22 @@ nav {
 }
 
 nav a {
-  text-decoration: none;
-  font-weight: 400;
-  font-size: 1.1rem;
-  color: #111;
-  transition: color 0.3s, border-bottom 0.3s;
+  font-weight: 300;
+  font-size: 1.15rem;
+  transition: color 0.3s, border-bottom 0.3s, transform 0.3s;
 }
 
 nav a:hover {
   color: #555;
   border-bottom: 2px solid #111;
+  transform: scale(1.05);
 }
 
 /* メインコンテンツ */
 main {
-  padding: 0 1.5rem;
+  padding: 0 2rem;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 3rem auto;
 }
 
 /* 見出し */
@@ -92,6 +91,9 @@ h1 {
   font-weight: 300;
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.5rem;
 }
 
 #thoughts-content h2,
@@ -100,14 +102,7 @@ h1 {
   font-size: 2rem;
   margin-top: 2rem;
   margin-bottom: 1rem;
-}
-
-#thoughts-content h3,
-#terms-content h3 {
-  font-weight: 500;
-  font-size: 1.5rem;
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
 }
 
 #thoughts-content ul,
