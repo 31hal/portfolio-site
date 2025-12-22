@@ -2,26 +2,25 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>依頼について</title>
+  <title>Photo Requests / Terms</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <script src="js/nav.js"></script>
 
   <main>
-    <section class="photoreq_terms">
-      <article style="--i:0.2;">
-        <!-- Markdown変換済みの規約文章 -->
-      </article>
+    <section class="terms">
+      <h1>Photo Requests / Terms</h1>
+      <div id="terms-content"></div>
     </section>
   </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script>
     fetch('data/photoreq_terms.md')
       .then(res => res.text())
-      .then(md => {
-        document.getElementById('terms-container').innerHTML = marked(md);
+      .then(text => {
+        const container = document.getElementById('terms-content');
+        container.innerHTML = text.replace(/\n/g, '<br>');
       });
   </script>
 </body>
