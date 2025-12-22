@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Thoughts | Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1 class="logo"><a href="index.html">Your Name</a></h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="news.html">News</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="thoughts">
+      <h2>Fragments of Thoughts</h2>
+      <div class="thought-grid">
+        <div class="thought-item" style="--x:0; --y:0;">夜の街を歩く。思考は影に沈む。</div>
+        <div class="thought-item" style="--x:20; --y:50;">雨の匂い、湿ったアスファルトに記憶を重ねる。</div>
+        <div class="thought-item" style="--x:-15; --y:120;">静寂の中に微かに聞こえる旋律が心を揺さぶる。</div>
+        <div class="thought-item" style="--x:10; --y:200;">目の前の光景は一瞬で、でも確かに存在する。</div>
+        <div class="thought-item" style="--x:-20; --y:280;">思考は途切れ、身体は街に溶け込む。</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Your Name</p>
+  </footer>
+
+  <script>
+    // 呟きのフローティング＆フェードイン
+    const items = document.querySelectorAll('.thought-item');
+    items.forEach((item) => {
+      const delay = Math.random() * 1000;
+      setTimeout(() => {
+        item.classList.add('visible');
+        animateFloat(item);
+      }, delay);
+    });
+
+    function animateFloat(el) {
+      let angle = 0;
+      setInterval(() => {
+        angle += 0.01;
+        el.style.transform = `translate(${el.dataset.x||0}px, ${el.dataset.y||0}px) translateY(${Math.sin(angle)*5}px) rotate(${Math.sin(angle)*1}deg)`;
+      }, 30);
+    }
+  </script>
+</body>
+</html>

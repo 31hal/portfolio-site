@@ -1,0 +1,36 @@
+body { margin:0; padding:0; font-family:'Helvetica Neue',sans-serif; background:#fff; overflow-x:hidden; }
+
+header { position:relative; height:100vh; }
+
+.logo {
+  position:absolute;
+  font-size:3rem;
+  font-weight:bold;
+  color:#000;
+}
+
+.nav-link {
+  position:absolute;
+  font-weight:bold;
+  text-decoration:none;
+  color:#111;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover {
+  transform: scale(1.1) rotate(0deg);
+  color:#e63946;
+}
+
+.hero p {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hero p:hover {
+  transform: scale(1.05) rotate(0deg);
+  opacity:1;
+}
+
+footer p {
+  font-family: 'Helvetica Neue', sans-serif;
+}
