@@ -2,21 +2,34 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>Home</title>
+  <title>Portfolio</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <script src="js/nav.js"></script>
-
-  <main>
-    <section class="hero">
-      <h1>齋藤のホームページ</h1>
-      <p>砂金砂場</p>
+  
+  <main class="home-page">
+    <section class="intro">
+      <h1>Portfolio</h1>
+      <p>Photography / Music / Fashion</p>
+      <p>Be true.</p>
     </section>
 
-    <section class="intro">
-      <p>ここでは、写真や文章、音楽を通して私の世界観を表現します。</p>
+    <section class="highlight-work">
+      <h2>Recent Works</h2>
+      <div class="works-grid">
+        <img src="assets/images/photo1-thumb.JPG" data-full="assets/images/photo1.JPG" alt="Work 1">
+        <img src="assets/images/photo2-thumb.JPG" data-full="assets/images/photo2.JPG" alt="Work 2">
+        <img src="assets/images/photo3-thumb.JPG" data-full="assets/images/photo3.JPG" alt="Work 3">
+      </div>
     </section>
   </main>
+
+  <div id="modal" class="modal">
+    <span id="modal-close">&times;</span>
+    <img class="modal-content" id="modal-img">
+  </div>
+
+  <script src="js/gallery.js"></script>
 </body>
 </html>
