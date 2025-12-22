@@ -15,30 +15,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ギャラリーのモーダル表示
   const galleryImages = document.querySelectorAll('.gallery img');
-  if (galleryImages.length > 0) {
-    const modal = document.createElement('div');
-    modal.classList.add('modal');
-    const modalImg = document.createElement('img');
-    modal.appendChild(modalImg);
-    document.body.appendChild(modal);
+  const modal = document.querySelector('.modal');
+  const modalImg = modal.querySelector('img');
   
-    galleryImages.forEach(img => {
-      img.addEventListener('click', () => {
-        const hiResSrc = img.src.replace('-thumb.jpg', '.JPG');
-        modalImg.src = hiResSrc;
-        modal.classList.add('show');
-      });
-    });
-  
-    modal.addEventListener('click', () => {
-      modal.classList.remove('show');
-      // opacity が 0 になってから display:none にする
-      setTimeout(() => {
-        modalImg.src = '';
-        modal.style.display = 'none';
-      }, 300); // CSS transition と同じ時間
+  galleryImages.forEach(img => {
+    img.addEventListener('click', () => {
+      const hiResSrc = img.src.replace('-thumb.jpg', '.JPG');
+      modalImg.src = hiResSrc;
+      modal.classList.add('show');
     });
   });
+  
+  modal.addEventListener('click', () => {
+    modal.classList.remove('show');
+    setTimeout(() => { modalImg.src = ''; }, 300); // フェードアウト後に src をクリア
+  });
+
 
 
   // 3. Markdownレンダリング関数（必要に応じて使用）
