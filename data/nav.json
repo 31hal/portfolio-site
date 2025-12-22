@@ -1,8 +1,9 @@
 [
-  {"title": "Home", "file": "index.html"},
-  {"title": "Gallery", "file": "gallery.html"},
-  {"title": "News", "file": "news.html"},
-  {"title": "Thoughts", "file": "thoughts.html"},
-  {"title": "Music", "file": "music.html"},
-  {"title": "依頼について", "file": "photoreq_terms.html"}
+  { "name": "Home", "url": "index.html" },
+  { "name": "Gallery", "url": "gallery.html" },
+  { "name": "News", "url": "news.html" },
+  { "name": "Thoughts", "url": "thoughts.html" },
+  { "name": "Music", "url": "music.html" },
+  { "name": "Photo Requests", "url": "photoreq_terms.html" },
+  { "name": "Profile", "url": "profile.html" }
 ]
