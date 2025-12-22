@@ -6,35 +6,17 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <script src="js/nav.js"></script>
 
   <main>
     <section class="gallery">
-      <img src="assets/images/photo1-thumb.jpg" data-highres="assets/images/photo1.JPG">
-      <img src="assets/images/photo2-thumb.jpg" data-highres="assets/images/photo2.JPG">
-      <img src="assets/images/photo3-thumb.jpg" data-highres="assets/images/photo3.JPG">
-      <img src="assets/images/photo4-thumb.jpg" data-highres="assets/images/photo4.JPG">
+      <img src="assets/images/photo1-thumb.jpg" alt="Photo 1" style="--i:0.2;">
+      <img src="assets/images/photo2-thumb.jpg" alt="Photo 2" style="--i:0.5;">
+      <img src="assets/images/photo3-thumb.jpg" alt="Photo 3" style="--i:0.7;">
+      <img src="assets/images/photo4-thumb.jpg" alt="Photo 4" style="--i:0.3;">
     </section>
   </main>
 
-  <!-- モーダル -->
-  <div class="modal" id="modal">
-    <img src="" alt="High resolution">
-  </div>
-
-  <script>
-    const modal = document.getElementById("modal");
-    const modalImg = modal.querySelector("img");
-    document.querySelectorAll(".gallery img").forEach(img => {
-      img.addEventListener("click", () => {
-        modalImg.src = img.dataset.highres;
-        modal.classList.add("show");
-      });
-    });
-    modal.addEventListener("click", () => {
-      modal.classList.remove("show");
-      modalImg.src = "";
-    });
-  </script>
+  <!-- nav.js がモーダルとナビを生成 -->
+  <script src="js/nav.js"></script>
 </body>
 </html>
