@@ -2,48 +2,29 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>Gallery | Portfolio</title>
+  <title>Gallery - Haruh</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <h1 class="logo"><a href="index.html">Your Name</a></h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="thoughts.html">Thoughts</a></li>
-        <li><a href="news.html">News</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="gallery.html">Gallery</a> |
+    <a href="news.html">News</a> |
+    <a href="thoughts.html">Thoughts</a> |
+    <a href="music.html">Music</a> |
+    <a href="terms.html">依頼について</a>
+  </nav>
+</header>
 
-  <main>
-    <section class="gallery">
-      <h2>Photo Gallery</h2>
-      <div class="grid">
-        <figure class="grid-item tall" style="--i:0;"><img src="img/photo1.jpg" alt="作品1"><figcaption>作品1の説明</figcaption></figure>
-        <figure class="grid-item wide" style="--i:1;"><img src="img/photo2.jpg" alt="作品2"><figcaption>作品2の説明</figcaption></figure>
-        <figure class="grid-item" style="--i:2;"><img src="img/photo3.jpg" alt="作品3"><figcaption>作品3の説明</figcaption></figure>
-        <figure class="grid-item tall" style="--i:3;"><img src="img/photo4.jpg" alt="作品4"><figcaption>作品4の説明</figcaption></figure>
-        <figure class="grid-item" style="--i:4;"><img src="img/photo5.jpg" alt="作品5"><figcaption>作品5の説明</figcaption></figure>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Your Name</p>
-  </footer>
-
-  <script>
-    // フェードインアニメーション
-    document.addEventListener('DOMContentLoaded', () => {
-      const items = document.querySelectorAll('.grid-item');
-      items.forEach((item, idx) => {
-        setTimeout(() => {
-          item.classList.add('visible');
-        }, idx * 200);
-      });
-    });
-  </script>
+<main>
+  <h1>Gallery</h1>
+  <p>ここに写真を展示します。</p>
+  <div class="gallery-grid">
+    <img src="assets/images/photo1.jpg" alt="Photo1">
+    <img src="assets/images/photo2.jpg" alt="Photo2">
+    <!-- 必要に応じて追加 -->
+  </div>
+</main>
 </body>
 </html>
