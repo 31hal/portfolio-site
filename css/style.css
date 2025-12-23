@@ -10,17 +10,22 @@ body {
   color: #111;
   background-color: #fff;
   margin: 0;
-  padding: 0;
+  padding-top: 70px;
 }
 
 /* ナビゲーション */
 nav {
+  position: fixed;   /* 画面上部に固定 */
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   justify-content: center;
   gap: 2rem;
   padding: 1.5rem 0;
   background-color: #fff;
-  border-bottom: 1px solid #ddd; /* nav 全体の下線は固定 */
+  border-bottom: 1px solid #ddd;
+  z-index: 999;
 }
 
 nav a {
