@@ -1,26 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const galleryImages = document.querySelectorAll('.gallery img');
-  const modal = document.getElementById('modal');
-  const modalImg = document.getElementById('modal-img');
-  const modalClose = document.getElementById('modal-close');
+  const gallery = document.querySelector('.gallery');
+  if (!gallery) return;
 
-  if (!galleryImages.length) return;
+  const modal = document.createElement('div');
+  modal.classList.add('modal');
+  const modalImg = document.createElement('img');
+  modal.appendChild(modalImg);
+  document.body.appendChild(modal);
 
-  galleryImages.forEach(img => {
+  gallery.querySelectorAll('img').forEach(img => {
     img.addEventListener('click', () => {
-      const hiResSrc = img.dataset.full || img.src.replace('-thumb.jpg', '.JPG');
-      modalImg.src = hiResSrc;
+      const hiRes = img.dataset.full || img.src;
+      modalImg.src = hiRes;
       modal.classList.add('show');
     });
   });
 
-  const closeModal = () => {
+  modal.addEventListener('click', () => {
     modal.classList.remove('show');
     setTimeout(() => { modalImg.src = ''; }, 300);
-  };
-
-  modalClose.addEventListener('click', closeModal);
-  modal.addEventListener('click', e => {
-    if (e.target === modal) closeModal();
   });
 });
