@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // 2. ギャラリーのモーダル表示
 document.addEventListener('DOMContentLoaded', () => {
-  const galleryImages = document.querySelectorAll('.gallery img');
+  const galleryImages = document.querySelectorAll('.gallery img, .works-grid img');
   if (!galleryImages.length) return;
 
   const modal = document.createElement('div');
