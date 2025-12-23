@@ -9,13 +9,12 @@ body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   color: #111;
   background-color: #fff;
-  margin: 0;
-  padding-top: 70px;
+  padding-top: 70px; /* nav 固定用 */
 }
 
 /* ナビゲーション */
 nav {
-  position: fixed;   /* 画面上部に固定 */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -29,7 +28,7 @@ nav {
 }
 
 nav a {
-  position: relative; /* 擬似要素用に relative に設定 */
+  position: relative;
   font-weight: 300;
   font-size: 1.15rem;
   text-decoration: none;
@@ -37,7 +36,6 @@ nav a {
   transition: color 0.3s;
 }
 
-/* 擬似要素で下線を作る */
 nav a::after {
   content: "";
   position: absolute;
@@ -49,13 +47,12 @@ nav a::after {
   transition: width 0.3s ease;
 }
 
-/* hover で下線を伸ばす */
 nav a:hover::after {
   width: 100%;
 }
 
 nav a:hover {
-  color: #555; /* 文字色も変える */
+  color: #555;
 }
 
 /* メインコンテンツ */
@@ -63,13 +60,6 @@ main {
   padding: 0 2rem;
   max-width: 1200px;
   margin: 3rem auto;
-}
-
-/* 見出し */
-h1 {
-  font-size: 2.5rem;
-  font-weight: 300;
-  margin-bottom: 1rem;
 }
 
 /* ギャラリー */
@@ -80,11 +70,10 @@ h1 {
   margin-top: 2rem;
 }
 
-/* ギャラリーのサムネイル */
 .gallery img {
   width: 100%;
-  height: 200px;        /* 高さ固定 */
-  object-fit: cover;    /* 中央クロップ */
+  height: 200px;
+  object-fit: cover;
   display: block;
   cursor: pointer;
   border-radius: 4px;
@@ -97,70 +86,7 @@ h1 {
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-/* Thoughts & Terms */
-.thoughts, .terms, .news, .music, .profile {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-#thoughts-content, #terms-content {
-  max-width: 850px;
-  margin: 2rem auto;
-  line-height: 1.8;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  color: #222;
-}
-
-#thoughts-content h1,
-#terms-content h1 {
-  font-weight: 300;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  letter-spacing: 1px;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 0.5rem;
-}
-
-#thoughts-content h2,
-#terms-content h2 {
-  font-weight: 400;
-  font-size: 2rem;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  letter-spacing: 0.5px;
-}
-
-#thoughts-content ul,
-#terms-content ul {
-  padding-left: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-#thoughts-content li,
-#terms-content li {
-  margin-bottom: 0.5rem;
-}
-
-/* Profile Image */
-.profile-image img {
-  width: 300px;
-  height: auto;
-  border-radius: 4px;
-}
-
-/* リンク */
-a {
-  color: #111;
-  text-decoration: none;
-  border-bottom: 1px dotted #111;
-}
-a:hover {
-  color: #555;
-  border-bottom: 1px solid #111;
-}
-
-/* モーダル用 */
+/* モーダル */
 .modal {
   position: fixed;
   top: 0; left: 0;
@@ -169,15 +95,15 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
   opacity: 0;
-  pointer-events: none; /* 非表示時はクリック不可 */
+  pointer-events: none;
   transition: opacity 0.3s ease;
+  z-index: 1000;
 }
 
 .modal.show {
   opacity: 1;
-  pointer-events: auto; /* 表示時にクリック可能に */
+  pointer-events: auto;
 }
 
 .modal img {
@@ -188,4 +114,12 @@ a:hover {
   transition: transform 0.3s ease;
 }
 
-
+#modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1001;
+}
