@@ -1,28 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const gallery = document.getElementById('gallery');
+  const galleryImages = document.querySelectorAll('.gallery img');
   const modal = document.getElementById('modal');
   const modalImg = document.getElementById('modal-img');
   const modalClose = document.getElementById('modal-close');
 
-  // サムネイルクリックで高解像度表示
-  gallery.querySelectorAll('img').forEach(img => {
+  if (!galleryImages.length) return;
+
+  galleryImages.forEach(img => {
     img.addEventListener('click', () => {
-      modal.style.display = 'flex';
-      modalImg.src = img.dataset.full;
+      const hiResSrc = img.dataset.full || img.src.replace('-thumb.jpg', '.JPG');
+      modalImg.src = hiResSrc;
+      modal.classList.add('show');
     });
   });
 
-  // ×ボタンで閉じる
-  modalClose.addEventListener('click', () => {
-    modal.style.display = 'none';
-    modalImg.src = '';
-  });
+  const closeModal = () => {
+    modal.classList.remove('show');
+    setTimeout(() => { modalImg.src = ''; }, 300);
+  };
 
-  // モーダル背景クリックで閉じる
-  modal.addEventListener('click', (e) => {
-    if(e.target === modal) {
-      modal.style.display = 'none';
-      modalImg.src = '';
-    }
+  modalClose.addEventListener('click', closeModal);
+  modal.addEventListener('click', e => {
+    if (e.target === modal) closeModal();
   });
 });
