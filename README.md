@@ -1,4 +1,4 @@
-ChatGPTをフル活用して書いたページ
+ChatGPTをフル活用して書いた私のポートフォリオです
 
 ## ディレクトリツリー構造構想
 
@@ -15,7 +15,9 @@ portfolio-site/
 │ css/
 │   └─ style.css
 │ js/
-│   └─ nav.js
+│   ├─ nav.js
+│   ├─ gallery.js
+│   └─ markdown.js
 │ data/
 │   ├─ nav.json
 │   ├─ photoreq_terms.md
@@ -24,6 +26,9 @@ portfolio-site/
 │
 └─ assets/
     ├─ images/
+    |   ├─ photo1-thumb.jpg
+    |   ├─ photo1.JPG
+    |   └─ ...
     └─ other/
 
 ```
