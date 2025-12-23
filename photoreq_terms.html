@@ -9,6 +9,7 @@
   <script src="js/nav.js"></script>
 
   <main>
+    <div class="md-content" id="md-container"></div>
     <section class="terms">
       <h1>Photo Requests / Terms</h1>
       <div id="terms-content"></div>
@@ -16,12 +17,7 @@
   </main>
 
   <script>
-    fetch('data/photoreq_terms.md')
-      .then(res => res.text())
-      .then(text => {
-        const container = document.getElementById('terms-content');
-        container.innerHTML = renderMarkdown(text);
-      });
+    renderMarkdown('photoreq_terms.md', '#md-container');
   </script>
 </body>
 </html>
