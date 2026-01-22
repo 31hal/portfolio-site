@@ -14,6 +14,9 @@ window.renderMarkdown = async function(mdFilePath, containerSelector) {
     // 太字
     html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
     html = html.replace(/__(.+?)__/g, '<strong>$1</strong>');
+
+    // 水平線
+    html = html.replace(/^---$/gm, '<hr>');
     
     // 箇条書き（連続するliを1つのulにまとめる）
     html = html.replace(/^(?:\*|-)\s+(.+)$/gm, '<li>$1</li>');
