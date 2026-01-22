@@ -11,6 +11,10 @@ window.renderMarkdown = async function(mdFilePath, containerSelector) {
     html = html.replace(/^## (.+)$/gm, '<h2>$1</h2>');
     html = html.replace(/^# (.+)$/gm, '<h1>$1</h1>');
 
+    // 太字
+    html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    html = html.replace(/__(.+?)__/g, '<strong>$1</strong>');
+    
     // 箇条書き（連続するliを1つのulにまとめる）
     html = html.replace(/^(?:\*|-)\s+(.+)$/gm, '<li>$1</li>');
     html = html.replace(/(<li>.*<\/li>)/gs, '<ul>$1</ul>');
