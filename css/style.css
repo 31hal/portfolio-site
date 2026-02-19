@@ -85,6 +85,32 @@ h1 {
   cursor: pointer;
 }
 
+/* Profileレイアウト */
+.profile-wrapper {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.profile-text {
+  flex: 1;
+  max-width: 500px;
+}
+
+.profile-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-image img {
+  width: 100%;
+  max-width: 420px;   /* ←ここが重要 */
+  height: auto;
+  object-fit: cover;
+}
+
 /* Markdown用コンテンツ */
 .md-content {
   max-width: 850px;
